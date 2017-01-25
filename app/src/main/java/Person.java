@@ -17,7 +17,7 @@ public class Person {
     public Person(){
 
     }
-
+    //Getter and Setter methods for measurements
     public char getPersonName() {
         return personName;
     }
