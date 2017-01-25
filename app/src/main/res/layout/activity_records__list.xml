@@ -11,7 +11,20 @@
     tools:context="com.example.bbest.bbest_sizebook.Records_List">
 
     <TextView
+        android:text="Current Records: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/CurrentRecordsTextView" />
+
+    <Button
+        android:text="+Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddRecordButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
