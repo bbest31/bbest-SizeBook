@@ -17,29 +17,14 @@
         android:text="@string/current_records"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bbest_SizebookTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp"
         android:id="@+id/CurrentRecordsTextView"
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
         android:textSize="18sp"
-        android:textColor="@android:color/white"
-        tools:ignore="RtlHardcoded" />
-
-    <ExpandableListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/AddRecordButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/white"
-        android:headerDividersEnabled="true"
-        android:footerDividersEnabled="true"
-        android:fadeScrollbars="true"
-        android:nestedScrollingEnabled="true"
-        tools:ignore="RtlHardcoded" />
+        android:textColor="?attr/actionModeSplitBackground"
+        tools:ignore="RtlHardcoded"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="@string/add"
@@ -50,23 +35,22 @@
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
         android:textSize="18sp"
-        android:layout_below="@+id/bbest_SizebookTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        tools:ignore="RtlHardcoded"
+        tools:ignore="RelativeOverlap,RtlHardcoded"
         android:onClick="addPerson"
-        android:textColor="@android:color/white" />
+        android:textColor="?attr/actionModeSplitBackground"
+        android:layout_alignBottom="@+id/CurrentRecordsTextView"
+        android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:text="@string/bbest_sizebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bbest_SizebookTextView"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:fontFamily="sans-serif-condensed"
-        android:textColor="@android:color/white"
-        tools:ignore="RtlHardcoded"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/CurrentRecordsTextView"
+        android:layout_toStartOf="@+id/AddRecordButton"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/white"
+        android:nestedScrollingEnabled="true"
+        android:id="@+id/RecordsListView"
+        android:divider="@android:drawable/bottom_bar"
+        android:dividerHeight="3sp" />
+
 </RelativeLayout>

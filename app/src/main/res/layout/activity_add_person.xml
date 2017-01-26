@@ -11,4 +11,146 @@
     tools:context="com.example.bbest.bbest_sizebook.AddPersonActivity"
     android:background="@android:color/background_light">
 
+    <TextView
+        android:text="@string/add_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="125dp"
+        android:id="@+id/AddPersonTextView"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:textColor="?attr/actionModeSplitBackground" />
+
+    <TextView
+        android:text="@string/asterisk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/PersonNameTextEntry"
+        android:layout_toEndOf="@+id/PersonNameTextEntry"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/NameRequiredAsteriskTextView"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/ChestSizeEntryView"
+        android:singleLine="true"
+        android:text="Chest Size"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginEnd="32dp"
+        android:layout_below="@+id/PersonNameTextEntry"
+        android:layout_alignParentEnd="true"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/name"
+        android:ems="10"
+        android:layout_marginTop="29dp"
+        android:id="@+id/PersonNameTextEntry"
+        tools:ignore="LabelFor"
+        android:singleLine="true"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/AddPersonTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp" />
+
+    <EditText
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/BustSizeEntryView"
+        android:text="Bust Size"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/NeckSizeEntryView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp"
+        android:singleLine="true"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/NeckSizeEntryView"
+        android:text="Neck Size"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/PersonNameTextEntry"
+        android:layout_alignStart="@+id/BustSizeEntryView"
+        android:singleLine="true"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/WaistSizeEntryView"
+        android:singleLine="true"
+        android:text="Waist Size"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/ChestSizeEntryView"
+        android:layout_alignStart="@+id/ChestSizeEntryView"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/HipSizeEntryView"
+        android:layout_below="@+id/BustSizeEntryView"
+        android:layout_alignStart="@+id/BustSizeEntryView"
+        android:textColor="@android:color/darker_gray"
+        android:singleLine="true"
+        android:text="Hip Size"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/HipSizeEntryView"
+        android:layout_alignStart="@+id/HipSizeEntryView"
+        android:layout_marginTop="17dp"
+        android:id="@+id/CommentEntryView"
+        android:layout_alignEnd="@+id/InseamLengthSizeEntryView"
+        android:background="@android:drawable/editbox_background"
+        android:layout_above="@+id/SubmitRecordButton" />
+
+    <EditText
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/InseamLengthSizeEntryView"
+        android:singleLine="true"
+        android:text="Inseam Length"
+        android:textColor="@android:color/darker_gray"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@+id/WaistSizeEntryView"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/AddPersonTextView"
+        android:id="@+id/SubmitRecordButton"
+        android:background="?attr/actionModeSplitBackground"
+        android:textColor="@android:color/white" />
 </RelativeLayout>

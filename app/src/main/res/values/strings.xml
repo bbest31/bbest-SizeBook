@@ -3,6 +3,9 @@
     <string name="add">+Add</string>
     <string name="current_records">Current Records:</string>
     <string name="bbest_sizebook">bbest Sizebook</string>
+    <string name="name">Name</string>
+    <string name="add_record">Add Record</string>
+    <string name="asterisk">*</string>
 
 
 </resources>
