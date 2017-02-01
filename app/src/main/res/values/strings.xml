@@ -18,6 +18,12 @@
     <string name="edit_name">Name:</string>
     <string name="edit_neck_size">Neck Size:</string>
     <string name="comments">Comments</string>
+    <string name="edit_bust_size">Bust Size:</string>
+    <string name="edit_comments">Comments:</string>
+    <string name="edit">Edit</string>
+    <string name="edit_hip_size">Hip Size:</string>
+    <string name="edit_inseam_length">Inseam Length</string>
+    <string name="edit_waist_size">Waist Size:</string>
 
 
 </resources>

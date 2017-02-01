@@ -44,7 +44,9 @@
         android:layout_toEndOf="@+id/EditNameTextView"
         android:layout_marginTop="13dp"
         android:id="@+id/EditNameTextEntry"
-        android:fontFamily="sans-serif-condensed" />
+        android:fontFamily="sans-serif-condensed"
+        android:background="@android:drawable/editbox_background"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:layout_width="85sp"
@@ -57,7 +59,8 @@
         android:layout_toEndOf="@+id/EditChestTextView"
         android:fontFamily="sans-serif-condensed"
         android:textColor="@android:color/black"
-        android:background="@android:drawable/editbox_background" />
+        android:background="@android:drawable/editbox_background"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:text="@string/edit_neck_size"
@@ -79,7 +82,8 @@
         android:fontFamily="sans-serif-condensed"
         android:layout_below="@+id/EditNameTextEntry"
         android:layout_toEndOf="@+id/EditNeckSizeTextView"
-        android:background="@android:drawable/editbox_background" />
+        android:background="@android:drawable/editbox_background"
+        tools:ignore="LabelFor,TextFields" />
 
     <TextView
         android:text="@string/edit_chest_size"
@@ -93,27 +97,7 @@
         android:layout_toEndOf="@+id/EditNeckSizeEntryView" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/EditWaistEntryView"
-        android:layout_below="@+id/EditNeckSizeEntryView"
-        android:layout_toEndOf="@+id/EditNeckSizeEntryView"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Waist Size:"
-        android:textColor="@android:color/black" />
-
-    <EditText
-        android:layout_width="85sp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName|numberDecimal"
-        android:ems="10"
-        android:id="@+id/EditBustEntryView"
-        android:background="@android:drawable/editbox_background"
-        android:layout_alignBottom="@+id/EditWaistEntryView"
-        android:layout_toEndOf="@+id/EditBustTextView" />
-
-    <TextView
-        android:text="Bust Size:"
+        android:text="@string/edit_bust_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/EditBustTextView"
@@ -126,11 +110,120 @@
     <EditText
         android:layout_width="85sp"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName|numberDecimal"
+        android:ems="10"
+        android:id="@+id/EditBustEntryView"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@+id/EditNeckSizeEntryView"
+        android:layout_alignStart="@+id/EditNeckSizeEntryView"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:layout_width="85sp"
+        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/EditWaistEntryView"
         android:fontFamily="sans-serif-condensed"
         android:background="@android:drawable/editbox_background"
-        android:layout_below="@+id/EditNeckSizeTextView"
-        android:layout_alignStart="@+id/EditChestEntryView" />
+        android:layout_below="@+id/EditChestEntryView"
+        android:layout_alignStart="@+id/EditChestEntryView"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditWaistTextView"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/edit_waist_size"
+        android:textColor="@android:color/black"
+        android:layout_alignBaseline="@+id/EditBustEntryView"
+        android:layout_alignBottom="@+id/EditBustEntryView"
+        android:layout_toEndOf="@+id/EditBustEntryView" />
+
+    <TextView
+        android:text="@string/edit_hip_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditBustEntryView"
+        android:layout_alignStart="@+id/EditBustTextView"
+        android:layout_marginTop="10dp"
+        android:id="@+id/EditHipTextView"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:layout_width="85sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_below="@+id/EditBustEntryView"
+        android:layout_alignStart="@+id/EditBustEntryView"
+        android:id="@+id/EditHipEntryView"
+        android:textSize="18sp"
+        android:background="@android:drawable/editbox_background"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:layout_width="85sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_below="@+id/EditWaistEntryView"
+        android:layout_toEndOf="@+id/EditInseamTextView"
+        android:id="@+id/EditInseamEntryView"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@android:drawable/editbox_background"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:text="@string/edit_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditHipEntryView"
+        android:layout_alignStart="@+id/EditHipTextView"
+        android:layout_marginTop="11dp"
+        android:id="@+id/EditCommentTextView"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="175sp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/EditCommentTextView"
+        android:layout_alignStart="@+id/EditCommentTextView"
+        android:id="@+id/EditCommentEntryView"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@android:drawable/editbox_background"
+        android:layout_alignEnd="@+id/EditWaistEntryView"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:text="@string/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/EditPersonTitleView"
+        android:layout_marginBottom="23dp"
+        android:id="@+id/EditPersonButton"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@string/edit_inseam_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditInseamTextView"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:layout_alignTop="@+id/EditHipTextView"
+        android:layout_toEndOf="@+id/EditHipEntryView" />
 </RelativeLayout>

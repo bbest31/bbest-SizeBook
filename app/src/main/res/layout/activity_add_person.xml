@@ -138,20 +138,6 @@
         tools:ignore="LabelFor"
         android:hint="@string/comments" />
 
-    <EditText
-        android:layout_width="150sp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/InseamLengthSizeEntryView"
-        android:textColor="@android:color/darker_gray"
-        android:background="@android:drawable/editbox_background"
-        android:layout_below="@+id/WaistSizeEntryView"
-        android:layout_alignParentEnd="true"
-        android:maxLines="1"
-        tools:ignore="LabelFor"
-        android:hint="@string/inseam_length" />
-
     <Button
         android:text="@string/submit"
         android:layout_width="wrap_content"
@@ -161,4 +147,18 @@
         android:id="@+id/SubmitRecordButton"
         android:background="?attr/actionModeSplitBackground"
         android:textColor="@android:color/white" />
+
+    <EditText
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/InseamLengthSizeEntryView"
+        android:textColor="@android:color/darker_gray"
+        android:background="@android:drawable/editbox_background"
+        android:maxLines="1"
+        tools:ignore="LabelFor"
+        android:hint="@string/inseam_length"
+        android:layout_below="@+id/WaistSizeEntryView"
+        android:layout_alignStart="@+id/WaistSizeEntryView" />
 </RelativeLayout>
