@@ -6,6 +6,18 @@
     <string name="name">Name</string>
     <string name="add_record">Add Record</string>
     <string name="asterisk">*</string>
+    <string name="bust_size">Bust Size</string>
+    <string name="chest_size">Chest Size</string>
+    <string name="hip_size">Hip Size</string>
+    <string name="neck_size">Neck Size</string>
+    <string name="inseam_length">Inseam Length</string>
+    <string name="submit">Submit</string>
+    <string name="waist_size">Waist Size</string>
+    <string name="edit_chest_size">Chest Size:</string>
+    <string name="edit_person">Edit Person</string>
+    <string name="edit_name">Name:</string>
+    <string name="edit_neck_size">Neck Size:</string>
+    <string name="comments">Comments</string>
 
 
 </resources>
