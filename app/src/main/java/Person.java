@@ -1,16 +1,18 @@
 /** Person class used to store physical measurements of said Person and possible comments
+ * Person class is the model for this application storing all of the data.
  * Created by bbest on 24/01/17.
  */
+import java.util.Observable;
 
-public class Person {
+public class Person extends Observable {
     //private int sizes for Person class measurements
     private String personName;
-    private int neckSize;
-    private int bustSize;
-    private int chestSize;
-    private int waistSize;
-    private int hipSize;
-    private int inseamLength;
+    private float neckSize;
+    private float bustSize;
+    private float chestSize;
+    private float waistSize;
+    private float hipSize;
+    private float inseamLength;
     private String comment;
 
     //Person constructor
@@ -18,67 +20,99 @@ public class Person {
 
     }
     //Getter and Setter methods for measurements
+    //name methods
     public String getPersonName() {
         return personName;
     }
 
     public void setPersonName(String personName) {
+
         this.personName = personName;
+        setChanged();
+        notifyObservers();
     }
 
-    public int getNeckSize() {
+//Neck Size methods
+    public float getNeckSize() {
         return neckSize;
     }
 
-    public void setNeckSize(int neckSize) {
+    public void setNeckSize(float neckSize) {
+
         this.neckSize = neckSize;
+        setChanged();
+        notifyObservers();
     }
 
-    public int getBustSize() {
+//Bust Size methdos
+    public float getBustSize() {
         return bustSize;
     }
 
-    public void setBustSize(int bustSize) {
+    public void setBustSize(float bustSize) {
+
         this.bustSize = bustSize;
+        setChanged();
+        notifyObservers();
     }
 
-    public int getChestSize() {
+//Chest Size methods
+    public float getChestSize() {
         return chestSize;
     }
 
-    public void setChestSize(int chestSize) {
+    public void setChestSize(float chestSize) {
+
         this.chestSize = chestSize;
+        setChanged();
+        notifyObservers();
     }
 
-    public int getWaistSize() {
+//Waist Size methods
+    public float getWaistSize() {
         return waistSize;
     }
 
-    public void setWaistSize(int waistSize) {
+    public void setWaistSize(float waistSize) {
+
         this.waistSize = waistSize;
+        setChanged();
+        notifyObservers();
     }
 
-    public int getHipSize() {
+//Hip Size methods
+    public float getHipSize() {
         return hipSize;
     }
 
-    public void setHipSize(int hipSize) {
+    public void setHipSize(float hipSize) {
+
         this.hipSize = hipSize;
+        setChanged();
+        notifyObservers();
     }
 
-    public int getInseamLength() {
+// Inseam Length methods
+    public float getInseamLength() {
         return inseamLength;
     }
 
-    public void setInseamLength(int inseamLength) {
+    public void setInseamLength(float inseamLength) {
+
         this.inseamLength = inseamLength;
+        setChanged();
+        notifyObservers();
     }
 
+//Comments methods
     public String getComment() {
         return comment;
     }
 
     public void setComment(String comment) {
+
         this.comment = comment;
+        setChanged();
+        notifyObservers();
     }
 }

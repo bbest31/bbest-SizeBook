@@ -2,6 +2,7 @@ package com.example.bbest.bbest_sizebook;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import java.util.Observer;
 
 public class EditPersonActivity extends AppCompatActivity {
 

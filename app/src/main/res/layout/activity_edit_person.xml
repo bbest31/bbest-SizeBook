@@ -51,7 +51,7 @@
     <EditText
         android:layout_width="85sp"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/EditChestEntryView"
         android:layout_alignBaseline="@+id/EditChestTextView"
@@ -76,7 +76,7 @@
     <EditText
         android:layout_width="85sp"
         android:layout_height="wrap_content"
-        android:inputType=""
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/EditNeckSizeEntryView"
         android:fontFamily="sans-serif-condensed"
@@ -121,7 +121,7 @@
     <EditText
         android:layout_width="85sp"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/EditWaistEntryView"
         android:fontFamily="sans-serif-condensed"
