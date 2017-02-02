@@ -51,7 +51,8 @@
         android:id="@+id/RecordsListView"
         android:divider="@android:drawable/bottom_bar"
         android:dividerHeight="3sp"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="false"
+        android:longClickable="?attr/windowActionBar" />
 
     <TextView
         android:text="@string/records_count"

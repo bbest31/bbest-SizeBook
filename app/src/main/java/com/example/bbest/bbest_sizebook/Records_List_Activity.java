@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -15,7 +16,7 @@ import java.util.Collection;
 
 import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
 
-public class Records_List_Activity extends AppCompatActivity {
+public class Records_List_Activity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class Records_List_Activity extends AppCompatActivity {
         ArrayList<Person> list = new ArrayList<Person>(persons);
         ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(personArrayAdapter);
+
+
 
         AddPersonButton = (Button) findViewById(R.id.AddRecordButton);
         AddPersonButton.setOnClickListener(new View.OnClickListener(){
@@ -53,4 +56,8 @@ public class Records_List_Activity extends AppCompatActivity {
         view.setText(size);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+    }
 }
