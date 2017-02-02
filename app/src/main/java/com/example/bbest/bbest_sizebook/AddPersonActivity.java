@@ -35,6 +35,8 @@ public class AddPersonActivity extends AppCompatActivity {
         EditText commenttextView = (EditText) findViewById(R.id.CommentEntryView);
 
         recordsListController.addPerson(new Person(nametextView.getText().toString(), necksize,chestsize, bustsize, waistsize,hipsize,inseamlength, commenttextView.getText().toString()));
-        //finish();
+        //need call to close activity and remove from activity stack
+        //recordCount();
+        finish();
     }
 }

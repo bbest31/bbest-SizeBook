@@ -48,10 +48,10 @@
         android:layout_toStartOf="@+id/AddRecordButton"
         android:layout_alignParentEnd="true"
         android:background="@android:color/white"
-        android:nestedScrollingEnabled="false"
         android:id="@+id/RecordsListView"
         android:divider="@android:drawable/bottom_bar"
-        android:dividerHeight="3sp" />
+        android:dividerHeight="3sp"
+        android:nestedScrollingEnabled="false" />
 
     <TextView
         android:text="@string/records_count"
