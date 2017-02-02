@@ -4,25 +4,25 @@
 
 public class Person {
     //private int sizes for Person class measurements
-    private char personName;
+    private String personName;
     private int neckSize;
     private int bustSize;
     private int chestSize;
     private int waistSize;
     private int hipSize;
     private int inseamLength;
-    private char comment;
+    private String comment;
 
     //Person constructor
     public Person(){
 
     }
     //Getter and Setter methods for measurements
-    public char getPersonName() {
+    public String getPersonName() {
         return personName;
     }
 
-    public void setPersonName(char personName) {
+    public void setPersonName(String personName) {
         this.personName = personName;
     }
 
@@ -74,11 +74,11 @@ public class Person {
         this.inseamLength = inseamLength;
     }
 
-    public char getComment() {
+    public String getComment() {
         return comment;
     }
 
-    public void setComment(char comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 }
