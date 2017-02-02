@@ -8,18 +8,26 @@ public class Person extends Observable {
 
     //private int sizes for com.example.bbest.bbest_sizebook.Person class measurements
     private String personName;
-    private float neckSize;
-    private float bustSize;
-    private float chestSize;
-    private float waistSize;
-    private float hipSize;
-    private float inseamLength;
+    private int neckSize;
+    private int bustSize;
+    private int chestSize;
+    private int waistSize;
+    private int hipSize;
+    private int inseamLength;
     private String comment;
 
-    //com.example.bbest.bbest_sizebook.Person constructor
-    public Person(String personName, float neckSize, float chestSize, float bustSize, float waistSize, float hipSize, float inseamLength, String comment){
+    //Person constructor
+    public Person(String personName, int neckSize, int chestSize, int bustSize, int waistSize, int hipSize, int inseamLength, String comment){
 
-    Person person = new Person("",0,0,0,0,0,0,"");
+    //Person person = new Person();
+        this.setPersonName(personName);
+        this.setNeckSize(neckSize);
+        this.setChestSize(chestSize);
+        this.setBustSize(bustSize);
+        this.setWaistSize(waistSize);
+        this.setHipSize(hipSize);
+        this.setInseamLength(inseamLength);
+        this.setComment(comment);
 
     }
 
@@ -37,11 +45,11 @@ public class Person extends Observable {
     }
 
 //Neck Size methods
-    public float getNeckSize() {
+    public int getNeckSize() {
         return neckSize;
     }
 
-    public void setNeckSize(float neckSize) {
+    public void setNeckSize(int neckSize) {
 
         this.neckSize = neckSize;
         setChanged();
@@ -49,11 +57,11 @@ public class Person extends Observable {
     }
 
 //Bust Size methdos
-    public float getBustSize() {
+    public int getBustSize() {
         return bustSize;
     }
 
-    public void setBustSize(float bustSize) {
+    public void setBustSize(int bustSize) {
 
         this.bustSize = bustSize;
         setChanged();
@@ -61,11 +69,11 @@ public class Person extends Observable {
     }
 
 //Chest Size methods
-    public float getChestSize() {
+    public int getChestSize() {
         return chestSize;
     }
 
-    public void setChestSize(float chestSize) {
+    public void setChestSize(int chestSize) {
 
         this.chestSize = chestSize;
         setChanged();
@@ -73,11 +81,11 @@ public class Person extends Observable {
     }
 
 //Waist Size methods
-    public float getWaistSize() {
+    public int getWaistSize() {
         return waistSize;
     }
 
-    public void setWaistSize(float waistSize) {
+    public void setWaistSize(int waistSize) {
 
         this.waistSize = waistSize;
         setChanged();
@@ -85,11 +93,11 @@ public class Person extends Observable {
     }
 
 //Hip Size methods
-    public float getHipSize() {
+    public int getHipSize() {
         return hipSize;
     }
 
-    public void setHipSize(float hipSize) {
+    public void setHipSize(int hipSize) {
 
         this.hipSize = hipSize;
         setChanged();
@@ -97,11 +105,11 @@ public class Person extends Observable {
     }
 
 // Inseam Length methods
-    public float getInseamLength() {
+    public int getInseamLength() {
         return inseamLength;
     }
 
-    public void setInseamLength(float inseamLength) {
+    public void setInseamLength(int inseamLength) {
 
         this.inseamLength = inseamLength;
         setChanged();
