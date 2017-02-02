@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import java.util.Observer;
 
-public class Records_List extends AppCompatActivity {
+public class Records_List_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class Records_List extends AppCompatActivity {
         });
     }
 
-    //onClick method for AddButton to go to Add Person Activity
+    //onClick method for AddButton to go to Add com.example.bbest.bbest_sizebook.Person Activity
     public void addPerson(View v){
 
 
