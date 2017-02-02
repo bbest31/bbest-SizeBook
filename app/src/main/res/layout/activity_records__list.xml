@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.bbest.bbest_sizebook.Records_List"
+    tools:context="com.example.bbest.bbest_sizebook.Records_List_Activity"
     android:background="@color/colorPrimary"
     android:fadeScrollbars="true">
 
@@ -48,7 +48,7 @@
         android:layout_toStartOf="@+id/AddRecordButton"
         android:layout_alignParentEnd="true"
         android:background="@android:color/white"
-        android:nestedScrollingEnabled="true"
+        android:nestedScrollingEnabled="false"
         android:id="@+id/RecordsListView"
         android:divider="@android:drawable/bottom_bar"
         android:dividerHeight="3sp" />

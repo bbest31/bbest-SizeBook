@@ -1,5 +1,6 @@
 package com.example.bbest.bbest_sizebook;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,16 +15,19 @@ public class Records_List_Activity extends AppCompatActivity {
         Button AddPersonButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records__list);
+
         AddPersonButton = (Button) findViewById(R.id.AddRecordButton);
         AddPersonButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Toast.makeText(getBaseContext(),"Clicked on Add button", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Records_List_Activity.this,AddPersonActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    //onClick method for AddButton to go to Add com.example.bbest.bbest_sizebook.Person Activity
+    //onClick method for AddButton to go to AddPerson Activity
     public void addPerson(View v){
 
 
