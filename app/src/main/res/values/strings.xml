@@ -24,6 +24,7 @@
     <string name="edit_hip_size">Hip Size:</string>
     <string name="edit_inseam_length">Inseam Length</string>
     <string name="edit_waist_size">Waist Size:</string>
+    <string name="records_count">00</string>
 
 
 </resources>

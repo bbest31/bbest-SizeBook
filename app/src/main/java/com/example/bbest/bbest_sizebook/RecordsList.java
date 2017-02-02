@@ -36,9 +36,16 @@ public class RecordsList extends Observable {
     }
 
 //returns a Person object from the list, used for editing a specific Person object
-    public Person getPerson(Person person){
+    public Person getPerson(int i){
 
-        int personIndex = recordList.indexOf(person);
-        return recordList.get(personIndex);
+        return recordList.get(i);
+    }
+
+    public int size(){
+        return recordList.size();
+    }
+
+    public boolean contains(Person person){
+        return recordList.contains(person);
     }
 }

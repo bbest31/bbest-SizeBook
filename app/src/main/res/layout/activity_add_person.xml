@@ -147,7 +147,8 @@
         android:layout_alignStart="@+id/AddPersonTextView"
         android:id="@+id/SubmitRecordButton"
         android:background="?attr/actionModeSplitBackground"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:onClick="submitNewRecord" />
 
     <EditText
         android:layout_width="150sp"
