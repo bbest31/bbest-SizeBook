@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
 
 public class AddPersonActivity extends AppCompatActivity {
 
@@ -16,33 +19,64 @@ public class AddPersonActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Grabs entered values from Entry views and creates new Person with those grabbed values.
+     * Control then takes this newPerson and adds it to the recordsList.
+     * Then uses finish() to kill the activity.
+     * @param v - Submit Button View on AddPerson Activity is taken in
+     */
     public void submitNewRecord(View v){
        // Toast.makeText(this, "Submiting new record", Toast.LENGTH_LONG).show();
        // RecordsListController recordsListController = new RecordsListController();
 
         EditText nametextView = (EditText) findViewById(R.id.PersonNameTextEntry);
+
        EditText necktextView = (EditText) findViewById(R.id.NeckSizeEntryView);
         String neckString =  necktextView.getText().toString();
        int necksize = Integer.parseInt(neckString);
+
         EditText chesttextView = (EditText) findViewById(R.id.ChestSizeEntryView);
-        int chestsize = Integer.parseInt(chesttextView.toString());
+        String chestString = chesttextView.getText().toString();
+        int chestsize = Integer.parseInt(chestString);
+
         EditText busttextView = (EditText) findViewById(R.id.BustSizeEntryView);
-        int bustsize = Integer.parseInt(busttextView.toString());
+        String bustString = busttextView.getText().toString();
+        int bustsize = Integer.parseInt(bustString);
+
         EditText waisttextView = (EditText) findViewById(R.id.WaistSizeEntryView);
-        int waistsize = Integer.parseInt(waisttextView.toString());
+        String waistString = waisttextView.getText().toString();
+        int waistsize = Integer.parseInt(waistString);
+
         EditText hiptextView = (EditText) findViewById(R.id.HipSizeEntryView);
-        int hipsize = Integer.parseInt(hiptextView.toString());
+        String hipString = hiptextView.getText().toString();
+        int hipsize = Integer.parseInt(hipString);
+
         EditText inseamtextView = (EditText) findViewById(R.id.InseamLengthSizeEntryView);
-        int inseamlength = Integer.parseInt(inseamtextView.toString());
+        String inseamString = inseamtextView.getText().toString();
+        int inseamlength = Integer.parseInt(inseamString);
+
         EditText commenttextView = (EditText) findViewById(R.id.CommentEntryView);
 
 //
         Person newPerson = new Person(nametextView.getText().toString(),necksize,chestsize, bustsize, waistsize,hipsize,inseamlength,commenttextView.getText().toString() );
-        Toast.makeText(this, String.valueOf( newPerson.getNeckSize()),Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "New Record made!",Toast.LENGTH_LONG).show();
       //  recordsListController.addPerson(newPerson);
-        //need call to close activity and remove from activity stack
+        //update the current record count
         //recordCount();
-        //finish();
 
+        //need call to close activity and remove from activity stack
+        finish();
+
+    }
+
+    /**
+     * recordCount()updates the count of Records on the text view CurrentRecordsCount on RecordsListActivity
+     * by using the size of the recordsList
+     */
+    public void recordCount(){
+        int size = recordsList.size();
+        Integer sizeIntegerObject = ((Integer) size);
+        TextView view = (TextView) findViewById(R.id.CurrentRecordsNumberView);
+        view.setText((sizeIntegerObject.toString()));
     }
 }

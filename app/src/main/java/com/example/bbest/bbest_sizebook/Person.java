@@ -1,5 +1,5 @@
-package com.example.bbest.bbest_sizebook; /** com.example.bbest.bbest_sizebook.Person class used to store physical measurements of said com.example.bbest.bbest_sizebook.Person and possible comments
- * com.example.bbest.bbest_sizebook.Person class is the model for this application storing all of the data.
+package com.example.bbest.bbest_sizebook; /** Person class used to store physical measurements of Person and possible comments
+ * Person class is a model for this application storing all of the data.
  * Created by bbest on 24/01/17.
  */
 import java.util.Observable;

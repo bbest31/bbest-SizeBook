@@ -11,7 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bbest.bbest_sizebook.Records_List_Activity"
     android:background="@color/colorPrimary"
-    android:fadeScrollbars="true">
+    android:fadeScrollbars="true"
+    android:nestedScrollingEnabled="false">
 
     <TextView
         android:text="@string/current_records"
@@ -52,16 +53,20 @@
         android:divider="@android:drawable/bottom_bar"
         android:dividerHeight="3sp"
         android:nestedScrollingEnabled="false"
-        android:longClickable="?attr/windowActionBar" />
+        android:longClickable="?attr/windowActionBar"
+        tools:ignore="UnusedAttribute" />
 
     <TextView
         android:text="@string/records_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/RecordsListView"
-        android:layout_toEndOf="@+id/CurrentRecordsTextView"
         android:id="@+id/CurrentRecordsNumberView"
         android:textColor="@android:color/white"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/CurrentRecordsTextView"
+        android:layout_alignBottom="@+id/CurrentRecordsTextView"
+        android:layout_toEndOf="@+id/CurrentRecordsTextView"
+        android:nestedScrollingEnabled="false" />
 
 </RelativeLayout>

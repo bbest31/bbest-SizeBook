@@ -23,38 +23,33 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         Button AddPersonButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records__list);
-        /*
+
         ListView listView = (ListView) findViewById(R.id.RecordsListView);
         Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
         ArrayList<Person> list = new ArrayList<Person>(persons);
         ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(personArrayAdapter);
-        */
+
 
 
         AddPersonButton = (Button) findViewById(R.id.AddRecordButton);
         AddPersonButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getBaseContext(),"Clicked on Add button", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(),"Clicked on Add button", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Records_List_Activity.this,AddPersonActivity.class);
                 startActivity(intent);
             }
         });
-        //recordCount();
+
     }
 
 
-/*
-    public void recordCount(){
-        int size = recordsList.size();
-        TextView view = (TextView) findViewById(R.id.CurrentRecordsNumberView);
-        view.setText(size);
-    }
 
-    //@Override
+
+    /*@Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-    }
-    */
+    }*/
+
 }
