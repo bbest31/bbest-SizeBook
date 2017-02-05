@@ -43,7 +43,10 @@ public class Person extends Observable {
         setChanged();
         notifyObservers();
     }
+    public String toString(){
 
+        return getPersonName();
+    }
 //Neck Size methods
     public int getNeckSize() {
         return neckSize;

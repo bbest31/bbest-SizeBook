@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
+//import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
 
 public class Records_List_Activity extends AppCompatActivity /*implements AdapterView.OnItemClickListener*/ {
 
@@ -26,11 +26,20 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
 
         ListView listView = (ListView) findViewById(R.id.RecordsListView);
         Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
-        ArrayList<Person> list = new ArrayList<Person>(persons);
-        ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
+        final ArrayList list = new ArrayList<Person>(persons);
+        final ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(personArrayAdapter);
 
+        RecordsListController.getRecordsList().addListener(new Listener() {
+            @Override
+            public void update() {
+                list.clear();
+                Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
+                list.addAll(persons);
+                personArrayAdapter.notifyDataSetChanged();
 
+            }
+        });
 
         AddPersonButton = (Button) findViewById(R.id.AddRecordButton);
         AddPersonButton.setOnClickListener(new View.OnClickListener(){
@@ -42,11 +51,37 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
             }
         });
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Person person = (Person) list.get(position);
+                RecordsListController.getRecordsList().removePerson(person);
+             //   Toast.makeText(Records_List_Activity.this, "Deleted "+list.get(position),Toast.LENGTH_LONG).show();
+                return false;
+            }
+        });
     }
 
 
+    protected void onResume(){
+        super.onResume();
 
+        ListView listView = (ListView) findViewById(R.id.RecordsListView);
+        Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
+        final ArrayList list = new ArrayList<Person>(persons);
+        ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(personArrayAdapter);
 
+        recordCount();
+    }
+    public void recordCount(){
+        //RecordsList recordList = getRecordsList();
+        RecordsListController recordsListController = new RecordsListController();
+        int size = recordsListController.getRecordsList().size();
+        Integer sizeIntegerObject = ((Integer) size);
+        TextView view = (TextView) findViewById(R.id.CurrentRecordsNumberView);
+        view.setText((sizeIntegerObject.toString()));
+    }
     /*@Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 

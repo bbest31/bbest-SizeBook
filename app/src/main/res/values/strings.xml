@@ -25,6 +25,7 @@
     <string name="edit_inseam_length">Inseam Length</string>
     <string name="edit_waist_size">Waist Size:</string>
     <string name="records_count">00</string>
+    <string name="edit_person_text">Edit Person</string>
 
 
 </resources>

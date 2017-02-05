@@ -8,7 +8,7 @@ import android.widget.TextView;
  */
 //Singleton
 public class RecordsListController {
-    public static RecordsList recordsList = null;
+    private static RecordsList recordsList = null;
     static public RecordsList getRecordsList(){
         if (recordsList == null){
             recordsList = new RecordsList();
@@ -18,7 +18,13 @@ public class RecordsListController {
 
     public void addPerson(Person newPerson){
 
-        recordsList.addRecord(newPerson);
+        getRecordsList().addRecord(newPerson);
     }
+     public void removePerson(Person p){
+         getRecordsList().removePerson(p);
+     }
 
+    public void getPerson(int i){
+        getRecordsList().getPerson(i);
+    }
 }

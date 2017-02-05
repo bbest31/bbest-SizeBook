@@ -214,7 +214,8 @@
         android:fontFamily="sans-serif-condensed"
         android:textColor="@android:color/white"
         android:textStyle="normal|bold"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:onClick="EditRecord (EditPersonActivity)" />
 
     <TextView
         android:text="@string/edit_inseam_length"

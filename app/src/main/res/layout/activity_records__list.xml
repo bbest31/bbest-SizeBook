@@ -54,7 +54,8 @@
         android:dividerHeight="3sp"
         android:nestedScrollingEnabled="false"
         android:longClickable="?attr/windowActionBar"
-        tools:ignore="UnusedAttribute" />
+        tools:ignore="UnusedAttribute"
+        style="@style/Widget.AppCompat.ListView" />
 
     <TextView
         android:text="@string/records_count"
