@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Observer;
 
 public class EditPersonActivity extends AppCompatActivity {
@@ -47,6 +50,16 @@ public class EditPersonActivity extends AppCompatActivity {
 
         EditText commenttextView = (EditText) findViewById(R.id.EditCommentEntryView);
         commenttextView.setText(person.getComment());
+
+        Date date = person.getDate();
+        EditText datetextview = (EditText) findViewById(R.id.EditDateEntryView);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+        try {
+            date = format.parse(datetextview.getText().toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        datetextview.setText(format.format(date));
 
     }
 
@@ -110,6 +123,20 @@ public class EditPersonActivity extends AppCompatActivity {
             inseamlength = Integer.parseInt(inseamString);
         }
         EditText commenttextView = (EditText) findViewById(R.id.EditCommentEntryView);
+        EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
+
+        Date date = new Date();
+        if(datetextview.getText().toString().trim().length() == 0){
+
+        }else{
+            String dateInString = datetextview.getText().toString();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+            try {
+                date = format.parse(dateInString);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
 
         if(nametextView.getText().toString().trim().length() == 0){
             Toast.makeText(this, "Please provide a name!", Toast.LENGTH_LONG).show();
@@ -125,7 +152,7 @@ public class EditPersonActivity extends AppCompatActivity {
             person.setHipSize(hipsize);
             person.setInseamLength(inseamlength);
             person.setComment(commenttextView.getText().toString());
-            //person.setDate(date);
+            person.setDate(date);
 
             Toast.makeText(this, "Record edited!", Toast.LENGTH_LONG).show();
 

@@ -1,5 +1,7 @@
 package com.example.bbest.bbest_sizebook;
 
+import android.icu.text.DateTimePatternGenerator;
+import android.icu.text.RelativeDateTimeFormatter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,6 +9,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import static com.example.bbest.bbest_sizebook.RecordsListController.getRecordsList;
 //import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
@@ -88,14 +96,25 @@ public class AddPersonActivity extends AppCompatActivity {
         EditText commenttextView = (EditText) findViewById(R.id.CommentEntryView);
         EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
 
-        //Date date = datetextview.getText();
+        Date date = new Date();
+        if(datetextview.getText().toString().trim().length() == 0){
+
+        }else{
+            String dateInString = datetextview.getText().toString();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+            try {
+                 date = format.parse(dateInString);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
 
         if(nametextView.getText().toString().trim().length() == 0){
             Toast.makeText(this, "Please provide a name!", Toast.LENGTH_LONG).show();
 
         }else {
 
-            Person newPerson = new Person(nametextView.getText().toString(), necksize, chestsize, bustsize, waistsize, hipsize, inseamlength, commenttextView.getText().toString());
+            Person newPerson = new Person(nametextView.getText().toString(), necksize, chestsize, bustsize, waistsize, hipsize, inseamlength, commenttextView.getText().toString(),date);
             Toast.makeText(this, "New Record made!", Toast.LENGTH_LONG).show();
             recordsListController.addPerson(newPerson);
             //update the current record count

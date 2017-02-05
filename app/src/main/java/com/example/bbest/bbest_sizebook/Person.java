@@ -20,7 +20,7 @@ public class Person implements Serializable {
     private Date date;
 
     //Person constructor
-    public Person(String personName, int neckSize, int chestSize, int bustSize, int waistSize, int hipSize, int inseamLength, String comment){
+    public Person(String personName, int neckSize, int chestSize, int bustSize, int waistSize, int hipSize, int inseamLength, String comment, Date date){
 
     //Person person = new Person();
         this.setPersonName(personName);
@@ -135,10 +135,12 @@ public class Person implements Serializable {
     }
 
     public Date getDate() {
+
         return date;
     }
 
     public void setDate(Date date) {
+
         this.date = date;
     }
 }

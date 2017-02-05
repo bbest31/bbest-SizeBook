@@ -15,8 +15,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 //import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
 
@@ -55,15 +58,23 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 startActivity(intent);
             }
         });
+        //View Records Details Action
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder adb = new AlertDialog.Builder(Records_List_Activity.this);
                 Person person = (Person)list.get(position);
+                Date date = person.getDate();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+                try {
+                    date = format.parse(date.toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
                 adb.setMessage(person.getPersonName()+"\n"+"Neck Size: "+ person.getNeckSize()+"   Chest Size: "+person.getChestSize()+"\n"+"Bust Size: "
-                +person.getBustSize()+"   Waist Size: "+person.getWaistSize()+"\n"+"Hip Size: "+person.getHipSize()+"   Inseam Length: "+person.getInseamLength()+"\n"+
+                +person.getBustSize()+"   Waist Size: "+person.getWaistSize()+"\n"+"Hip Size: "+person.getHipSize()+"   Inseam Length: "+person.getInseamLength()+"\n"+"Date: "+format.format(date)+"\n"+
                 person.getComment());
 
                 final int Finalposition = position;

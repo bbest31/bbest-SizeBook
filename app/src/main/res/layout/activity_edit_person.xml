@@ -227,4 +227,25 @@
         android:textSize="12sp"
         android:layout_alignTop="@+id/EditHipTextView"
         android:layout_toEndOf="@+id/EditHipEntryView" />
+
+    <TextView
+        android:text="@string/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/EditCommentTextView"
+        android:layout_alignStart="@+id/EditPersonTitleView"
+        android:id="@+id/EditDateText"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/EditDateEntryView"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@+id/EditHipEntryView"
+        android:layout_toEndOf="@+id/EditDateText"
+        tools:ignore="LabelFor"
+        android:textSize="14sp" />
 </RelativeLayout>

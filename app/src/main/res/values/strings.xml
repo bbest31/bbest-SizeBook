@@ -28,6 +28,7 @@
     <string name="edit_person_text">Edit Person</string>
     <string name="yyyy_mm_dd">yyyy-mm-dd</string>
     <string name="datestring">yyyy.mm.dd</string>
+    <string name="date">Date:</string>
 
 
 </resources>
