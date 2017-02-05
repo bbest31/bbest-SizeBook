@@ -215,7 +215,7 @@
         android:textColor="@android:color/white"
         android:textStyle="normal|bold"
         android:textSize="18sp"
-        android:onClick="EditRecord (EditPersonActivity)" />
+        android:onClick="EditRecord" />
 
     <TextView
         android:text="@string/edit_inseam_length"

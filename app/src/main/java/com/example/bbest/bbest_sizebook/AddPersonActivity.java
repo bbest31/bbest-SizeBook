@@ -86,11 +86,15 @@ public class AddPersonActivity extends AppCompatActivity {
             inseamlength = Integer.parseInt(inseamString);
         }
         EditText commenttextView = (EditText) findViewById(R.id.CommentEntryView);
+        EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
+
+        //Date date = datetextview.getText();
 
         if(nametextView.getText().toString().trim().length() == 0){
             Toast.makeText(this, "Please provide a name!", Toast.LENGTH_LONG).show();
 
         }else {
+
             Person newPerson = new Person(nametextView.getText().toString(), necksize, chestsize, bustsize, waistsize, hipsize, inseamlength, commenttextView.getText().toString());
             Toast.makeText(this, "New Record made!", Toast.LENGTH_LONG).show();
             recordsListController.addPerson(newPerson);

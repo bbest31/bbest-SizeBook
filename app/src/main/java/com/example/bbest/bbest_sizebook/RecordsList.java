@@ -1,4 +1,5 @@
 package com.example.bbest.bbest_sizebook;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Observable;
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  * Created by bbest on 01/02/17.
  */
 
-public class RecordsList extends Observable {
+public class RecordsList implements Serializable {
 
     protected ArrayList<Person> recordList;
     protected ArrayList<Listener> listeners;
@@ -18,7 +19,13 @@ public class RecordsList extends Observable {
         listeners = new ArrayList<Listener>();
 
     }
-
+//
+//    private ArrayList<Listener> getListeners(){
+//        if(listeners == null){
+//            listeners = new ArrayList<Listener>();
+//        }
+//        return listeners;
+//    }
 // gets all of the Person records
     public Collection<Person> getRecords(){
 

@@ -124,21 +124,6 @@
         android:hint="@string/hip_size"
         android:inputType="number" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_below="@+id/HipSizeEntryView"
-        android:layout_alignStart="@+id/HipSizeEntryView"
-        android:layout_marginTop="17dp"
-        android:id="@+id/CommentEntryView"
-        android:layout_alignEnd="@+id/InseamLengthSizeEntryView"
-        android:background="@android:drawable/editbox_background"
-        android:layout_above="@+id/SubmitRecordButton"
-        tools:ignore="LabelFor"
-        android:hint="@string/comments" />
-
     <Button
         android:text="@string/submit"
         android:layout_width="wrap_content"
@@ -163,4 +148,29 @@
         android:layout_below="@+id/WaistSizeEntryView"
         android:layout_alignStart="@+id/WaistSizeEntryView"
         android:inputType="number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/DateEntryView"
+        android:layout_below="@+id/HipSizeEntryView"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/datestring"
+        android:textColor="@android:color/darker_gray"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/CommentEntryView"
+        android:background="@android:drawable/editbox_background"
+        tools:ignore="LabelFor"
+        android:hint="@string/comments"
+        android:layout_below="@+id/DateEntryView"
+        android:layout_alignStart="@+id/DateEntryView"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SubmitRecordButton" />
 </RelativeLayout>

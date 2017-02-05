@@ -6,23 +6,56 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Observer;
 
 public class EditPersonActivity extends AppCompatActivity {
+    private int position;
+    private ArrayList<Person> list;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_person);
         //needs to grab person info and populate entry views
+        list = (ArrayList<Person>)getIntent().getSerializableExtra("list");
+        position = getIntent().getIntExtra("position",0);
+        Person person = list.get(position);
+        EditText nametextView = (EditText) findViewById(R.id.EditNameTextEntry);
+        nametextView.setText(person.getPersonName());
+
+        EditText necktextView = (EditText) findViewById(R.id.EditNeckSizeEntryView);
+        necktextView.setText(Integer.toString(person.getNeckSize()));
+
+        EditText chesttextView = (EditText) findViewById(R.id.EditChestEntryView);
+        chesttextView.setText(Integer.toString(person.getChestSize()));
+
+
+        EditText busttextView = (EditText) findViewById(R.id.EditBustEntryView);
+        busttextView.setText(Integer.toString(person.getBustSize()));
+
+        EditText waisttextView = (EditText) findViewById(R.id.EditWaistEntryView);
+        waisttextView.setText(Integer.toString(person.getWaistSize()));
+
+        EditText hiptextView = (EditText) findViewById(R.id.EditHipEntryView);
+        hiptextView.setText(Integer.toString(person.getHipSize()));
+
+        EditText inseamtextView = (EditText) findViewById(R.id.EditInseamEntryView);
+        inseamtextView.setText(Integer.toString(person.getInseamLength()));
+
+
+        EditText commenttextView = (EditText) findViewById(R.id.EditCommentEntryView);
+        commenttextView.setText(person.getComment());
+
     }
 
     public void EditRecord(View v) {
+        Person person = list.get(position);
         // Toast.makeText(this, "Submiting new record", Toast.LENGTH_LONG).show();
         RecordsListController recordsListController = new RecordsListController();
 
         EditText nametextView = (EditText) findViewById(R.id.EditNameTextEntry);
-
 
         EditText necktextView = (EditText) findViewById(R.id.EditNeckSizeEntryView);
         String neckString = necktextView.getText().toString();
@@ -84,6 +117,15 @@ public class EditPersonActivity extends AppCompatActivity {
         }else {
 
             //use setter methods for person to change attribute values.
+            person.setPersonName(nametextView.getText().toString());
+            person.setNeckSize(necksize);
+            person.setChestSize(chestsize);
+            person.setBustSize(bustsize);
+            person.setWaistSize(waistsize);
+            person.setHipSize(hipsize);
+            person.setInseamLength(inseamlength);
+            person.setComment(commenttextView.getText().toString());
+            //person.setDate(date);
 
             Toast.makeText(this, "Record edited!", Toast.LENGTH_LONG).show();
 

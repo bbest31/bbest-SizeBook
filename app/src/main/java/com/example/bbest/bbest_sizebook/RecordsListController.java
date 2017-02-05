@@ -20,9 +20,9 @@ public class RecordsListController {
 
         getRecordsList().addRecord(newPerson);
     }
-     public void removePerson(Person p){
-         getRecordsList().removePerson(p);
-     }
+    // public void removePerson(Person p){
+    //     getRecordsList().removePerson(p);
+   //  }
 
     public void getPerson(int i){
         getRecordsList().getPerson(i);

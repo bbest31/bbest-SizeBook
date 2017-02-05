@@ -1,10 +1,14 @@
 package com.example.bbest.bbest_sizebook;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -36,6 +40,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 list.clear();
                 Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
                 list.addAll(persons);
+                recordCount();
                 personArrayAdapter.notifyDataSetChanged();
 
             }
@@ -50,19 +55,59 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 startActivity(intent);
             }
         });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(Records_List_Activity.this);
+                Person person = (Person)list.get(position);
+
+                adb.setMessage(person.getPersonName()+"\n"+"Neck Size: "+ person.getNeckSize()+"   Chest Size: "+person.getChestSize()+"\n"+"Bust Size: "
+                +person.getBustSize()+"   Waist Size: "+person.getWaistSize()+"\n"+"Hip Size: "+person.getHipSize()+"   Inseam Length: "+person.getInseamLength()+"\n"+
+                person.getComment());
+
+                final int Finalposition = position;
+                adb.setPositiveButton("Edit", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Person person = (Person) list.get(Finalposition);
+                        Intent intent = new Intent(Records_List_Activity.this, EditPersonActivity.class);
+                        intent.putExtra("list",list);
+                        intent.putExtra("position", position);
+                        startActivity(intent);
+                    }
+                });
+                adb.show();
+            }
+        });
+        //Long click functionality for deleting records
+        listView.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Person person = (Person) list.get(position);
-                RecordsListController.getRecordsList().removePerson(person);
-             //   Toast.makeText(Records_List_Activity.this, "Deleted "+list.get(position),Toast.LENGTH_LONG).show();
-                return false;
+                //Toast.makeText(Records_List_Activity.this, "Deleted "+list.get(position),Toast.LENGTH_LONG).show();
+                AlertDialog.Builder adb = new AlertDialog.Builder(Records_List_Activity.this);
+                adb.setMessage("Delete "+list.get(position).toString()+"?");
+                adb.setCancelable(true);
+                final int finalPosition = position;
+                adb.setPositiveButton("Delete", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Person person = (Person) list.get(finalPosition);
+                        RecordsListController.getRecordsList().removePerson(person);
+                    }
+                });
+                adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                adb.show();
+                return true;
             }
         });
     }
 
-
+/*
     protected void onResume(){
         super.onResume();
 
@@ -74,6 +119,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
 
         recordCount();
     }
+    */
     public void recordCount(){
         //RecordsList recordList = getRecordsList();
         RecordsListController recordsListController = new RecordsListController();

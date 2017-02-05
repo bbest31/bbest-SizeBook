@@ -2,9 +2,11 @@ package com.example.bbest.bbest_sizebook; /** Person class used to store physica
  * Person class is a model for this application storing all of the data.
  * Created by bbest on 24/01/17.
  */
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Observable;
 
-public class Person extends Observable {
+public class Person implements Serializable {
 
     //private int sizes for com.example.bbest.bbest_sizebook.Person class measurements
     private String personName;
@@ -15,6 +17,7 @@ public class Person extends Observable {
     private int hipSize;
     private int inseamLength;
     private String comment;
+    private Date date;
 
     //Person constructor
     public Person(String personName, int neckSize, int chestSize, int bustSize, int waistSize, int hipSize, int inseamLength, String comment){
@@ -28,6 +31,7 @@ public class Person extends Observable {
         this.setHipSize(hipSize);
         this.setInseamLength(inseamLength);
         this.setComment(comment);
+        this.setDate(date);
 
     }
 
@@ -40,8 +44,7 @@ public class Person extends Observable {
     public void setPersonName(String personName) {
 
         this.personName = personName;
-        setChanged();
-        notifyObservers();
+
     }
     public String toString(){
 
@@ -55,8 +58,8 @@ public class Person extends Observable {
     public void setNeckSize(int neckSize) {
 
         this.neckSize = neckSize;
-        setChanged();
-        notifyObservers();
+
+
     }
 
 //Bust Size methdos
@@ -67,8 +70,8 @@ public class Person extends Observable {
     public void setBustSize(int bustSize) {
 
         this.bustSize = bustSize;
-        setChanged();
-        notifyObservers();
+
+
     }
 
 //Chest Size methods
@@ -79,8 +82,8 @@ public class Person extends Observable {
     public void setChestSize(int chestSize) {
 
         this.chestSize = chestSize;
-        setChanged();
-        notifyObservers();
+
+
     }
 
 //Waist Size methods
@@ -91,8 +94,8 @@ public class Person extends Observable {
     public void setWaistSize(int waistSize) {
 
         this.waistSize = waistSize;
-        setChanged();
-        notifyObservers();
+
+
     }
 
 //Hip Size methods
@@ -103,8 +106,8 @@ public class Person extends Observable {
     public void setHipSize(int hipSize) {
 
         this.hipSize = hipSize;
-        setChanged();
-        notifyObservers();
+
+
     }
 
 // Inseam Length methods
@@ -115,8 +118,8 @@ public class Person extends Observable {
     public void setInseamLength(int inseamLength) {
 
         this.inseamLength = inseamLength;
-        setChanged();
-        notifyObservers();
+
+
     }
 
 //Comments methods
@@ -127,7 +130,15 @@ public class Person extends Observable {
     public void setComment(String comment) {
 
         this.comment = comment;
-        setChanged();
-        notifyObservers();
+
+
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
