@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-//import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
+
 
 public class Records_List_Activity extends AppCompatActivity /*implements AdapterView.OnItemClickListener*/ {
 
@@ -133,7 +133,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         });
     }
 
-//Methood used to update the current record count
+//Method used to update the current record count
     public void recordCount(){
         RecordsListController recordsListController = new RecordsListController();
         int size = recordsListController.getRecordsList().size();
