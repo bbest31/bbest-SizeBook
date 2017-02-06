@@ -42,13 +42,14 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records__list);
         RecordsListManager.initManager(this.getApplicationContext());
-
+//Filling ListView with appropriate Views and Collection of Persons
         ListView listView = (ListView) findViewById(R.id.RecordsListView);
         Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
         final ArrayList list = new ArrayList<Person>(persons);
         final ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(personArrayAdapter);
         recordCount();
+        //Adds Listeners to the Collection
         RecordsListController.getRecordsList().addListener(new Listener() {
             @Override
             public void update() {
@@ -57,10 +58,10 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 list.addAll(persons);
                 recordCount();
                 personArrayAdapter.notifyDataSetChanged();
-
             }
         });
-
+        
+        //AddPersonButton onClick function to induce AddPersonActivity
         AddPersonButton = (Button) findViewById(R.id.AddRecordButton);
         AddPersonButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -69,6 +70,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 startActivity(intent);
             }
         });
+        
         //View Records Details Action
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
@@ -89,6 +91,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 person.getComment());
 
                 final int Finalposition = position;
+                //Edit Button induces EditPersonActivity and passes necessary parameters using Intent.putExtra()
                 adb.setPositiveButton("Edit", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -102,6 +105,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
                 adb.show();
             }
         });
+        
         //Long click functionality for deleting records
         listView.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
@@ -129,7 +133,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         });
     }
 
-
+//Methood used to update the current record count
     public void recordCount(){
         RecordsListController recordsListController = new RecordsListController();
         int size = recordsListController.getRecordsList().size();
