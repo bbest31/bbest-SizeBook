@@ -11,17 +11,17 @@ public class Person implements Serializable {
 
     //private int sizes for Person class measurements
     private String personName;
-    private int neckSize;
-    private int bustSize;
-    private int chestSize;
-    private int waistSize;
-    private int hipSize;
-    private int inseamLength;
+    private Float neckSize;
+    private Float bustSize;
+    private Float chestSize;
+    private Float waistSize;
+    private Float hipSize;
+    private Float inseamLength;
     private String comment;
     private Date date;
 
     //Person constructor
-    public Person(String personName, int neckSize, int chestSize, int bustSize, int waistSize, int hipSize, int inseamLength, String comment, Date date){
+    public Person(String personName, Float neckSize, Float chestSize, Float bustSize, Float waistSize, Float hipSize, Float inseamLength, String comment, Date date){
 
     //Person person = new Person();
         this.setPersonName(personName);
@@ -52,23 +52,23 @@ public class Person implements Serializable {
         return getPersonName();
     }
 //Neck Size methods
-    public int getNeckSize() {
+    public Float getNeckSize() {
         return neckSize;
     }
 
-    public void setNeckSize(int neckSize) {
+    public void setNeckSize(Float neckSize) {
 
         this.neckSize = neckSize;
 
 
     }
 
-//Bust Size methdos
-    public int getBustSize() {
+//Bust Size methods
+    public Float getBustSize() {
         return bustSize;
     }
 
-    public void setBustSize(int bustSize) {
+    public void setBustSize(Float bustSize) {
 
         this.bustSize = bustSize;
 
@@ -76,11 +76,11 @@ public class Person implements Serializable {
     }
 
 //Chest Size methods
-    public int getChestSize() {
+    public Float getChestSize() {
         return chestSize;
     }
 
-    public void setChestSize(int chestSize) {
+    public void setChestSize(Float chestSize) {
 
         this.chestSize = chestSize;
 
@@ -88,11 +88,11 @@ public class Person implements Serializable {
     }
 
 //Waist Size methods
-    public int getWaistSize() {
+    public Float getWaistSize() {
         return waistSize;
     }
 
-    public void setWaistSize(int waistSize) {
+    public void setWaistSize(Float waistSize) {
 
         this.waistSize = waistSize;
 
@@ -100,11 +100,11 @@ public class Person implements Serializable {
     }
 
 //Hip Size methods
-    public int getHipSize() {
+    public Float getHipSize() {
         return hipSize;
     }
 
-    public void setHipSize(int hipSize) {
+    public void setHipSize(Float hipSize) {
 
         this.hipSize = hipSize;
 
@@ -112,11 +112,11 @@ public class Person implements Serializable {
     }
 
 // Inseam Length methods
-    public int getInseamLength() {
+    public Float getInseamLength() {
         return inseamLength;
     }
 
-    public void setInseamLength(int inseamLength) {
+    public void setInseamLength(Float inseamLength) {
 
         this.inseamLength = inseamLength;
 

@@ -17,8 +17,11 @@ import java.util.Date;
 import java.util.Locale;
 
 import static com.example.bbest.bbest_sizebook.RecordsListController.getRecordsList;
-//import static com.example.bbest.bbest_sizebook.RecordsListController.recordsList;
 
+/**
+ * This activity is used to add a person record to the RecordList via the RecordListController which calls on the RecordListManager
+ * The Person parameters are grabbed from the Edit Text entry views and converted into the necessary attribute types.
+ */
 public class AddPersonActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +34,7 @@ public class AddPersonActivity extends AppCompatActivity {
 
     /**
      * Grabs entered values from Entry views and creates new Person with those grabbed values.
+     * if entry views are empty it defaults them to zero, and all the float values are rounded to the nearest half.
      * Control then takes this newPerson and adds it to the recordsList.
      * Then uses finish() to kill the activity.
      * @param v - Submit Button View on AddPerson Activity is taken in
@@ -44,56 +48,61 @@ public class AddPersonActivity extends AppCompatActivity {
 
         EditText necktextView = (EditText) findViewById(R.id.NeckSizeEntryView);
         String neckString = necktextView.getText().toString();
-        int necksize;
+        float necksize;
         if (neckString.trim().length() == 0) {
             necksize = 0;
         } else {
-            necksize = Integer.parseInt(neckString);
+            necksize = Float.valueOf(neckString);
+            necksize = (float) (Math.round(necksize *2)/2.0);
         }
 
         EditText chesttextView = (EditText) findViewById(R.id.ChestSizeEntryView);
         String chestString = chesttextView.getText().toString();
-        int chestsize;
+        float chestsize;
         if (chestString.trim().length() == 0) {
             chestsize = 0;
         } else {
-            chestsize = Integer.parseInt(chestString);
+            chestsize = Float.valueOf(chestString);
+            chestsize = (float) (Math.round(chestsize * 2)/ 2.0);
         }
 
         EditText busttextView = (EditText) findViewById(R.id.BustSizeEntryView);
         String bustString = busttextView.getText().toString();
-        int bustsize;
+        float bustsize;
         if (bustString.trim().length() == 0){
             bustsize = 0;
     }else{
-        bustsize = Integer.parseInt(bustString);
+            bustsize = Float.valueOf(bustString);
+            bustsize = (float) (Math.round(bustsize * 2)/ 2.0);
     }
         EditText waisttextView = (EditText) findViewById(R.id.WaistSizeEntryView);
         String waistString = waisttextView.getText().toString();
-        int waistsize;
+        float waistsize;
         if(waistString.trim().length() == 0){
             waistsize = 0;
         } else {
-            waistsize = Integer.parseInt(waistString);
-        }
+            waistsize = Float.valueOf(waistString);
+            waistsize = (float) (Math.round(waistsize * 2)/ 2.0);        }
 
         EditText hiptextView = (EditText) findViewById(R.id.HipSizeEntryView);
         String hipString = hiptextView.getText().toString();
-        int hipsize;
+        float hipsize;
         if(hipString.trim().length() == 0){
             hipsize = 0;
         } else {
-            hipsize = Integer.parseInt(hipString);
-        }
+            hipsize = Float.valueOf(hipString);
+            hipsize = (float) (Math.round(hipsize * 2)/ 2.0);        }
 
         EditText inseamtextView = (EditText) findViewById(R.id.InseamLengthSizeEntryView);
         String inseamString = inseamtextView.getText().toString();
-        int inseamlength;
+        float inseamlength;
         if(inseamString.trim().length() == 0){
             inseamlength = 0;
         } else {
-            inseamlength = Integer.parseInt(inseamString);
-        }
+            inseamlength = Float.valueOf(inseamString);
+            inseamlength = (float) (Math.round(inseamlength * 2)/ 2.0);        }
+
+
         EditText commenttextView = (EditText) findViewById(R.id.CommentEntryView);
         EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
 

@@ -55,7 +55,7 @@ public class RecordsListController {
     }
   
     //This function edits an existing record so the view update properly
-    static public void editRecord(int i,String name,int necksize,int chestsize, int bustsize,int waistsize, int hipsize, int inseamlength, String comment, Date date){
+    static public void editRecord(int i,String name,float necksize,float chestsize, float bustsize,float waistsize, float hipsize, float inseamlength, String comment, Date date){
         Person person = getRecordsList().getPerson(i);
         person.setPersonName(name);
         person.setNeckSize(necksize);

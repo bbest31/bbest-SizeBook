@@ -110,7 +110,7 @@
     <EditText
         android:layout_width="85sp"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName|numberDecimal"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/EditBustEntryView"
         android:background="@android:drawable/editbox_background"
