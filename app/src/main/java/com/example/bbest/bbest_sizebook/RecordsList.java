@@ -36,14 +36,14 @@ public class RecordsList implements Serializable {
         notifyListeners();
 
     }
-
+    //gets all Listeners looking at the List
     private ArrayList<Listener> getListeners(){
         if(listeners == null){
             listeners = new ArrayList<Listener>();
         }
         return listeners;
     }
-
+    //notifies any Listeners looking at the List that the List has been updated.
     public void notifyListeners() {
         for (Listener listener: getListeners()) {
             listener.update();
@@ -62,20 +62,24 @@ public class RecordsList implements Serializable {
     public Person getPerson(int i){
         return recordList.get(i);
     }
-
+    
+//size of list
     public int size(){
         return recordList.size();
     }
-
+    
+    //probably won't use
     public boolean contains(Person person){
 
         return recordList.contains(person);
     }
-
+    
+    //adds a Listener
     public void addListener(Listener l){
 
         getListeners().add(l);
     }
+    //removes a Listener
     public void removeListener(Listener l){
         getListeners().remove(l);
 
