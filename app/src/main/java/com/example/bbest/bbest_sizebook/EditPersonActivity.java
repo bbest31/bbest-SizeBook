@@ -1,5 +1,7 @@
-/*Outstanding Problem: Can't edit the Date attribute due to a NullPointerException being thrown from line 139
-The date is just edited to the current date instead.
+/*Outstanding Problem: Can't edit the Date attribute due to a NullPointerException being thrown from line 141
+The date is just kept as original instead. Also name edits do not show up in the ListView but if the record is viewed the changes are shown.
+editPerson Activity populates the EntryViews with the current Person's attribute values and then once the EditButton is clicked
+it grabs the new values and assigns them to the same Person object using the setter methods.
 
  */
 
@@ -71,7 +73,7 @@ public class EditPersonActivity extends AppCompatActivity {
         datetextview.setText(format.format(date));
 
     }
-
+//Grabs new values
     public void EditRecord(View v) {
         Person person = list.get(position);
         // Toast.makeText(this, "Submiting new record", Toast.LENGTH_LONG).show();
@@ -134,7 +136,7 @@ public class EditPersonActivity extends AppCompatActivity {
         EditText commenttextView = (EditText) findViewById(R.id.EditCommentEntryView);
         EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
 
-        Date date = new Date();
+       // Date date = new Date();
 //        String dateString = datetextview.getText().toString();
 //        if(dateString.trim().length() == 0){
 //
@@ -154,8 +156,8 @@ public class EditPersonActivity extends AppCompatActivity {
         }else {
             String name =nametextView.getText().toString();
             String comment = commenttextView.getText().toString();
-
-            RecordsListController.editRecord(position,name,necksize,chestsize,bustsize,waistsize,hipsize,inseamlength,comment,date);
+            //calls Controller to edit the Record.
+            RecordsListController.editRecord(position,name,necksize,chestsize,bustsize,waistsize,hipsize,inseamlength,comment,person.getDate());
             Toast.makeText(this, "Record edited!", Toast.LENGTH_LONG).show();
 
             //need call to close activity and remove from activity stack

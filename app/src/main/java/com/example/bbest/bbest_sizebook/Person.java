@@ -1,4 +1,5 @@
-package com.example.bbest.bbest_sizebook; /** Person class used to store physical measurements of Person and possible comments
+package com.example.bbest.bbest_sizebook;
+/** Person class used to store physical measurements of Person and possible comments
  * Person class is a model for this application storing all of the data.
  * Created by bbest on 24/01/17.
  */
@@ -133,7 +134,7 @@ public class Person implements Serializable {
 
 
     }
-
+//Date methods
     public Date getDate() {
 
         return date;
