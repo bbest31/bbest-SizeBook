@@ -25,6 +25,7 @@ public class AddPersonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_person);
+        RecordsListManager.initManager(this.getApplicationContext());
 
     }
 
@@ -117,7 +118,6 @@ public class AddPersonActivity extends AppCompatActivity {
             Person newPerson = new Person(nametextView.getText().toString(), necksize, chestsize, bustsize, waistsize, hipsize, inseamlength, commenttextView.getText().toString(),date);
             Toast.makeText(this, "New Record made!", Toast.LENGTH_LONG).show();
             recordsListController.addPerson(newPerson);
-            //update the current record count
 
 
             //need call to close activity and remove from activity stack

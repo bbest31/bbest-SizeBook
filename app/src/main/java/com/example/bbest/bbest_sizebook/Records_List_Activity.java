@@ -30,13 +30,14 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         Button AddPersonButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records__list);
+        RecordsListManager.initManager(this.getApplicationContext());
 
         ListView listView = (ListView) findViewById(R.id.RecordsListView);
         Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
         final ArrayList list = new ArrayList<Person>(persons);
         final ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(personArrayAdapter);
-
+        recordCount();
         RecordsListController.getRecordsList().addListener(new Listener() {
             @Override
             public void update() {
@@ -53,7 +54,6 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         AddPersonButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //Toast.makeText(getBaseContext(),"Clicked on Add button", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(Records_List_Activity.this,AddPersonActivity.class);
                 startActivity(intent);
             }
@@ -118,30 +118,14 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         });
     }
 
-/*
-    protected void onResume(){
-        super.onResume();
 
-        ListView listView = (ListView) findViewById(R.id.RecordsListView);
-        Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
-        final ArrayList list = new ArrayList<Person>(persons);
-        ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
-        listView.setAdapter(personArrayAdapter);
-
-        recordCount();
-    }
-    */
     public void recordCount(){
-        //RecordsList recordList = getRecordsList();
         RecordsListController recordsListController = new RecordsListController();
         int size = recordsListController.getRecordsList().size();
         Integer sizeIntegerObject = ((Integer) size);
         TextView view = (TextView) findViewById(R.id.CurrentRecordsNumberView);
         view.setText((sizeIntegerObject.toString()));
     }
-    /*@Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-    }*/
 
 }

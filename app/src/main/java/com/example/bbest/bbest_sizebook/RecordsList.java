@@ -1,6 +1,8 @@
 package com.example.bbest.bbest_sizebook;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import java.util.Observable;
 import java.util.ArrayList;
 /**
@@ -10,8 +12,8 @@ import java.util.ArrayList;
 
 public class RecordsList implements Serializable {
 
-    protected ArrayList<Person> recordList;
-    protected ArrayList<Listener> listeners;
+    protected ArrayList<Person> recordList = null;
+     protected transient ArrayList<Listener> listeners = null;
 
     //Constructor for RecordsList
     public RecordsList(){
@@ -19,13 +21,8 @@ public class RecordsList implements Serializable {
         listeners = new ArrayList<Listener>();
 
     }
-//
-//    private ArrayList<Listener> getListeners(){
-//        if(listeners == null){
-//            listeners = new ArrayList<Listener>();
-//        }
-//        return listeners;
-//    }
+
+
 // gets all of the Person records
     public Collection<Person> getRecords(){
 
@@ -40,11 +37,19 @@ public class RecordsList implements Serializable {
 
     }
 
+    private ArrayList<Listener> getListeners(){
+        if(listeners == null){
+            listeners = new ArrayList<Listener>();
+        }
+        return listeners;
+    }
+
     public void notifyListeners() {
-        for (Listener listerner: listeners) {
-            listerner.update();
+        for (Listener listener: getListeners()) {
+            listener.update();
         }
     }
+
 
     //removes a Person from the list
     public void removePerson(Person p){
@@ -68,10 +73,11 @@ public class RecordsList implements Serializable {
     }
 
     public void addListener(Listener l){
-        listeners.add(l);
+
+        getListeners().add(l);
     }
     public void removeListener(Listener l){
-        listeners.remove(l);
+        getListeners().remove(l);
 
     }
 

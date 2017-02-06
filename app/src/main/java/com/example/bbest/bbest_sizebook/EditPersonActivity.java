@@ -21,6 +21,9 @@ public class EditPersonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_person);
+        RecordsListManager.initManager(this.getApplicationContext());
+
+
         //needs to grab person info and populate entry views
         list = (ArrayList<Person>)getIntent().getSerializableExtra("list");
         position = getIntent().getIntExtra("position",0);
@@ -126,34 +129,35 @@ public class EditPersonActivity extends AppCompatActivity {
         EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
 
         Date date = new Date();
-        if(datetextview.getText().toString().trim().length() == 0){
-
-        }else{
-            String dateInString = datetextview.getText().toString();
-            SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
-            try {
-                date = format.parse(dateInString);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
+//        if(datetextview.getText().toString().trim().length() == 0){
+//        date = new Date();
+//        }else{
+//            String dateInString = datetextview.getText().toString();
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+//            try {
+//                date = format.parse(dateInString);
+//            } catch (ParseException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
         if(nametextView.getText().toString().trim().length() == 0){
             Toast.makeText(this, "Please provide a name!", Toast.LENGTH_LONG).show();
 
         }else {
-
+            String name =nametextView.getText().toString();
+            String comment = commenttextView.getText().toString();
             //use setter methods for person to change attribute values.
-            person.setPersonName(nametextView.getText().toString());
-            person.setNeckSize(necksize);
-            person.setChestSize(chestsize);
-            person.setBustSize(bustsize);
-            person.setWaistSize(waistsize);
-            person.setHipSize(hipsize);
-            person.setInseamLength(inseamlength);
-            person.setComment(commenttextView.getText().toString());
-            person.setDate(date);
-
+//            person.setPersonName(nametextView.getText().toString());
+//            person.setNeckSize(necksize);
+//            person.setChestSize(chestsize);
+//            person.setBustSize(bustsize);
+//            person.setWaistSize(waistsize);
+//            person.setHipSize(hipsize);
+//            person.setInseamLength(inseamlength);
+//            person.setComment(commenttextView.getText().toString());
+//            person.setDate(date);
+            RecordsListController.editRecord(position,name,necksize,chestsize,bustsize,waistsize,hipsize,inseamlength,comment,date);
             Toast.makeText(this, "Record edited!", Toast.LENGTH_LONG).show();
 
             //need call to close activity and remove from activity stack

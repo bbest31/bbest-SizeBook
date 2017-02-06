@@ -8,7 +8,7 @@ import java.util.Observable;
 
 public class Person implements Serializable {
 
-    //private int sizes for com.example.bbest.bbest_sizebook.Person class measurements
+    //private int sizes for Person class measurements
     private String personName;
     private int neckSize;
     private int bustSize;
