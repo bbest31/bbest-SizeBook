@@ -1,3 +1,9 @@
+/*editPerson Activity populates the EntryViews with the current Person's attribute values and then once the EditButton is clicked
+it grabs the new values and assigns them to the same Person object using the setter methods.
+
+*/
+
+
 package com.example.bbest.bbest_sizebook;
 
 import android.support.v7.app.AppCompatActivity;
@@ -65,7 +71,7 @@ public class EditPersonActivity extends AppCompatActivity {
         datetextview.setText(format.format(date));
 
     }
-
+//Grabs new values
     public void EditRecord(View v) {
         Person person = list.get(position);
         // Toast.makeText(this, "Submiting new record", Toast.LENGTH_LONG).show();
@@ -129,17 +135,17 @@ public class EditPersonActivity extends AppCompatActivity {
         EditText datetextview = (EditText) findViewById(R.id.DateEntryView);
 
         Date date = new Date();
-//        if(datetextview.getText().toString().trim().length() == 0){
-//        date = new Date();
-//        }else{
-//            String dateInString = datetextview.getText().toString();
-//            SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
-//            try {
-//                date = format.parse(dateInString);
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-//        }
+       if(datetextview.getText().toString().trim().length() == 0){
+       date = new Date();
+       }else{
+           String dateInString = datetextview.getText().toString();
+           SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+           try {
+               date = format.parse(dateInString);
+           } catch (ParseException e) {
+               e.printStackTrace();
+           }
+       }
 
         if(nametextView.getText().toString().trim().length() == 0){
             Toast.makeText(this, "Please provide a name!", Toast.LENGTH_LONG).show();
@@ -147,16 +153,7 @@ public class EditPersonActivity extends AppCompatActivity {
         }else {
             String name =nametextView.getText().toString();
             String comment = commenttextView.getText().toString();
-            //use setter methods for person to change attribute values.
-//            person.setPersonName(nametextView.getText().toString());
-//            person.setNeckSize(necksize);
-//            person.setChestSize(chestsize);
-//            person.setBustSize(bustsize);
-//            person.setWaistSize(waistsize);
-//            person.setHipSize(hipsize);
-//            person.setInseamLength(inseamlength);
-//            person.setComment(commenttextView.getText().toString());
-//            person.setDate(date);
+            //calls Controller to edit the Record.
             RecordsListController.editRecord(position,name,necksize,chestsize,bustsize,waistsize,hipsize,inseamlength,comment,date);
             Toast.makeText(this, "Record edited!", Toast.LENGTH_LONG).show();
 
