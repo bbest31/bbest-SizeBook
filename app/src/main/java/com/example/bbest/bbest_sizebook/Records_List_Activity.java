@@ -1,3 +1,14 @@
+/*Records_List_Activity is the main screen of bbest-SizeBook, This diplays a ListView containing all the current records
+*as well the current record count above the ListView. To add a record there is an Add button in the top right corner navigating to a 
+*AddPersonActivity. To delete records I implemented a long click functionality and to view the record details a short click will 
+*trigger a dialog box to appear showing the records details with an edit button to edit to record in the EditPersonActvity.
+
+Sources: 
+https://www.youtube.com/playlist?list=PL240uJOh_Vb4PtMZ0f7N8ACYkCLv0673O
+Collaborator- Peter Weckend
+http://www.mkyong.com/java/how-to-convert-string-to-date-java/
+
+*/
 package com.example.bbest.bbest_sizebook;
 
 import android.app.Activity;
