@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Date;
 
 
-/**
+/**RecordsListController handles the changing the of RecordsList and managing the Listeners for the list.
  * Created by bbest on 02/02/17.
  */
 //Singleton
@@ -14,7 +14,7 @@ public class RecordsListController {
 
 
     private static RecordsList recordsList = null;
-
+    //Constructor
     static public RecordsList getRecordsList(){
 
         if(recordsList == null){
@@ -37,7 +37,8 @@ public class RecordsListController {
         }
         return recordsList;
     }
-
+    
+//saves the list
   static  public void saveRecordsList(){
         try {
             RecordsListManager.getManager().saveRecordsList(getRecordsList());
@@ -47,14 +48,13 @@ public class RecordsListController {
         }
     }
 
-
+    //Gets the list and adds a Person using the RecordsList method .addRecord()
     public void addPerson(Person newPerson){
 
         getRecordsList().addRecord(newPerson);
     }
-    // public void removePerson(Person p){
-    //     getRecordsList().removePerson(p);
-   //  }
+  
+    //This function edits an existing record so the view update properly
     static public void editRecord(int i,String name,int necksize,int chestsize, int bustsize,int waistsize, int hipsize, int inseamlength, String comment, Date date){
         Person person = getRecordsList().getPerson(i);
         person.setPersonName(name);
@@ -67,6 +67,7 @@ public class RecordsListController {
         person.setComment(comment);
         person.setDate(date);
     }
+    //gets a person in the list by index
     public void getPerson(int i){
         getRecordsList().getPerson(i);
     }
