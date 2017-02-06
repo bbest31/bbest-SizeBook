@@ -9,9 +9,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.bbest.bbest_sizebook.Records_List"
+    tools:context="com.example.bbest.bbest_sizebook.Records_List_Activity"
     android:background="@color/colorPrimary"
-    android:fadeScrollbars="true">
+    android:fadeScrollbars="true"
+    android:nestedScrollingEnabled="false">
 
     <TextView
         android:text="@string/current_records"
@@ -21,7 +22,7 @@
         android:fontFamily="sans-serif-condensed"
         android:textStyle="normal|bold"
         android:textSize="18sp"
-        android:textColor="?attr/actionModeSplitBackground"
+        android:textColor="@android:color/white"
         tools:ignore="RtlHardcoded"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
@@ -37,7 +38,7 @@
         android:textSize="18sp"
         tools:ignore="RelativeOverlap,RtlHardcoded"
         android:onClick="addPerson"
-        android:textColor="?attr/actionModeSplitBackground"
+        android:textColor="@android:color/white"
         android:layout_alignBottom="@+id/CurrentRecordsTextView"
         android:layout_alignParentEnd="true" />
 
@@ -48,9 +49,24 @@
         android:layout_toStartOf="@+id/AddRecordButton"
         android:layout_alignParentEnd="true"
         android:background="@android:color/white"
-        android:nestedScrollingEnabled="true"
         android:id="@+id/RecordsListView"
         android:divider="@android:drawable/bottom_bar"
-        android:dividerHeight="3sp" />
+        android:dividerHeight="3sp"
+        android:nestedScrollingEnabled="false"
+        android:longClickable="?attr/windowActionBar"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:text="@string/records_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CurrentRecordsNumberView"
+        android:textColor="@android:color/white"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/CurrentRecordsTextView"
+        android:layout_alignBottom="@+id/CurrentRecordsTextView"
+        android:layout_toEndOf="@+id/CurrentRecordsTextView"
+        android:nestedScrollingEnabled="false" />
 
 </RelativeLayout>
