@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/bbest/Documents/UofA School/CMPUT301/bbest-SizeBook/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout-v21/notification_action.xml"
+    }
+]
