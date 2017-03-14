@@ -173,4 +173,5 @@
         android:layout_alignStart="@+id/DateEntryView"
         android:layout_height="wrap_content"
         android:layout_above="@+id/SubmitRecordButton" />
+
 </RelativeLayout>

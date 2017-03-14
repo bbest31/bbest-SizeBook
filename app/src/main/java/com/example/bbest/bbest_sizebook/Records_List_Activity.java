@@ -42,6 +42,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records__list);
         RecordsListManager.initManager(this.getApplicationContext());
+
 //Filling ListView with appropriate Views and Collection of Persons
         ListView listView = (ListView) findViewById(R.id.RecordsListView);
         Collection<Person> persons = RecordsListController.getRecordsList().getRecords();
@@ -49,6 +50,7 @@ public class Records_List_Activity extends AppCompatActivity /*implements Adapte
         final ArrayAdapter<Person> personArrayAdapter = new ArrayAdapter<Person>(this,android.R.layout.simple_list_item_1,list);
         listView.setAdapter(personArrayAdapter);
         recordCount();
+
         //Adds Listeners to the Collection
         RecordsListController.getRecordsList().addListener(new Listener() {
             @Override
